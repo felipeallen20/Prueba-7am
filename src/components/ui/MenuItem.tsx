@@ -28,7 +28,7 @@ export default function MenuItem({ item }: MenuItemProps) {
           justifyContent: 'center',
           cursor: 'pointer',
           transition: 'all 0.2s ease',
-          background: isActive ? '#2B2E8C' : 'transparent',
+          background: isActive ? '#262776' : 'transparent',
           boxShadow: isActive ? '0 2px 4px rgba(43, 46, 140, 0.2)' : 'none',
         }}
         className="menu-item"
@@ -38,7 +38,7 @@ export default function MenuItem({ item }: MenuItemProps) {
       >
         <Icon 
           style={{ 
-            fontSize: 20, 
+            fontSize: 24, 
             color: isActive ? '#fff' : '#888',
             transition: 'color 0.2s ease'
           }} 
