@@ -117,7 +117,7 @@ export default function RootLayout({
           </Sider>
 
           <Layout>
-            <Content style={{ padding: 24, background: '#f5f5f5' }}>
+            <Content style={{ padding: 24, background: '#ffffff' }}>
               {children}
             </Content>
           </Layout>

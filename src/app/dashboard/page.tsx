@@ -17,7 +17,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
       <Content style={{ padding: '24px' }}>
         <Breadcrumb style={{ marginBottom: 8 }}>
           <Breadcrumb.Item>lorem ipsum</Breadcrumb.Item>
