@@ -1,22 +1,28 @@
-"use client";
+'use client';
 
-import { Breadcrumb, Typography, Table, Layout } from 'antd';
+import { useEffect, useState } from 'react';
+import { Breadcrumb, Typography, Layout } from 'antd';
 import FilterTable from '@/components/dashboard/FilterTable';
 import DashboardTable from '@/components/dashboard/DashboardTable';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const { Title } = Typography;
 
-export default function Dashboard() {
-  const empresas = [];
+interface Empresa {
+  id: string;
+  nombre: string;
+  estado: 'Activo' | 'Inactivo';
+}
 
-  const columns = [
-    {
-      title: 'Nombre',
-      dataIndex: 'nombre',
-      key: 'nombre',
-    },
-  ];
+export default function Dashboard() {
+  const [empresas, setEmpresas] = useState<Empresa[]>([]);
+
+  useEffect(() => {
+    fetch('/api/enterprise')
+      .then((res) => res.json())
+      .then((data) => setEmpresas(data))
+      .catch((err) => console.error('Error al cargar empresas:', err));
+  }, []);
 
   return (
     <Layout style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
@@ -36,7 +42,7 @@ export default function Dashboard() {
           onCreate={() => console.log('Crear nueva empresa')}
         />
 
-        <DashboardTable />
+        <DashboardTable empresas={empresas} />
       </Content>
     </Layout>
   );
