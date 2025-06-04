@@ -91,11 +91,12 @@ export default function RootLayout({
             {/* Settings en la parte inferior */}
             <div style={{ 
               position: 'absolute',
-              bottom: 24,
+              bottom: 150,
+              left: '50%',
+              transform: 'translateX(-50%)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: '100%'
             }}>
               <div style={{ 
                 borderTop: '1px solid #f0f0f0', 
