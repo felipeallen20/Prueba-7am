@@ -1,27 +1,27 @@
 [
   {
     "id": "01",
-    "nombre": "Empresa nombre ABC",
+    "nombre": "Empresa nombre A",
     "estado": "Activo"
   },
   {
     "id": "02",
-    "nombre": "Empresa nombre ABC",
+    "nombre": "Empresa nombre B",
     "estado": "Activo"
   },
   {
     "id": "03",
-    "nombre": "Empresa nombre ABC",
+    "nombre": "Empresa nombre C",
     "estado": "Activo"
   },
   {
     "id": "04",
-    "nombre": "Empresa nombre ABC",
+    "nombre": "Empresa nombre D",
     "estado": "Activo"
   },
   {
     "id": "05",
-    "nombre": "Empresa nombre ABC",
+    "nombre": "Empresa nombre E",
     "estado": "Inactivo"
   }
 ]
