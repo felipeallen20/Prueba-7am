@@ -3,6 +3,10 @@
 import 'antd/dist/reset.css';
 import "./globals.css";
 import { Layout, Avatar } from 'antd';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import MenuItem from '@/components/ui/MenuItem';
+import { MenuItem as MenuItemType } from '@/types/menu';
 import {
   MailOutlined,
   EyeOutlined,
@@ -17,6 +21,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
+  // Configuración de los elementos del menú
+  const menuItems: MenuItemType[] = [
+    {
+      key: 'activity',
+      icon: MailOutlined,
+      path: '/activity',
+      label: 'Activity'
+    },
+    {
+      key: 'analytics',
+      icon: EyeOutlined,
+      path: '/analytics',
+      label: 'Analytics'
+    },
+    {
+      key: 'dashboard',
+      icon: RocketOutlined,
+      path: '/dashboard',
+      label: 'Dashboard'
+    }
+  ];
+
+  // Función para determinar si un item está activo
+  const isActive = (path: string) => pathname === path;
   return (
     <html lang="en">
       <body>
@@ -54,37 +84,9 @@ export default function RootLayout({
                 gap: 24, 
                 alignItems: 'center' 
               }}>
-                <MailOutlined 
-                  style={{ 
-                    fontSize: 20, 
-                    color: '#888',
-                    cursor: 'pointer',
-                    transition: 'color 0.2s'
-                  }} 
-                />
-                <EyeOutlined 
-                  style={{ 
-                    fontSize: 20, 
-                    color: '#888',
-                    cursor: 'pointer',
-                    transition: 'color 0.2s'
-                  }} 
-                />
-                <div
-                  style={{
-                    background: '#2B2E8C',
-                    padding: 10,
-                    borderRadius: 8,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s',
-                    boxShadow: '0 2px 4px rgba(43, 46, 140, 0.2)'
-                  }}
-                >
-                  <RocketOutlined style={{ fontSize: 20, color: '#fff' }} />
-                </div>
+                {menuItems.map((item) => (
+                  <MenuItem key={item.key} item={item} />
+                ))}
               </div>
             </div>
 
