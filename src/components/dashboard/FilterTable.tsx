@@ -23,8 +23,9 @@ export default function FilterTable({ totalEmpresas, onSearch, onCreate }: Filte
 
       <Space size="middle">
         <Text type="secondary">{String(totalEmpresas).padStart(2, '0')} empresas</Text>
-        <Button type="primary" icon={<PlusOutlined />} onClick={onCreate} style={{ backgroundColor: '#1E1F8A' }}>
+        <Button type="primary" onClick={onCreate} style={{ backgroundColor: '#1E1F8A' }}>
           Crear nueva empresa
+          <PlusOutlined />
         </Button>
       </Space>
     </div>
