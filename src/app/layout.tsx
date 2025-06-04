@@ -81,7 +81,7 @@ export default function RootLayout({
               <div style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
-                gap: 24, 
+                gap: 5, 
                 alignItems: 'center' 
               }}>
                 {menuItems.map((item) => (
