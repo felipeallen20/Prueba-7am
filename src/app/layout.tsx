@@ -42,7 +42,7 @@ export default function RootLayout({
             }}>
               {/* Logo superior */}
               <Avatar
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Logo_CNRS.svg/512px-Logo_CNRS.svg.png"
+                src="/img/logo/logo 2.png"
                 size={40}
                 style={{ marginBottom: 32 }}
               />
