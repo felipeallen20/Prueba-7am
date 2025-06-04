@@ -38,7 +38,7 @@ export default function MenuItem({ item }: MenuItemProps) {
       >
         <Icon 
           style={{ 
-            fontSize: 24, 
+            fontSize: 22, 
             color: isActive ? '#fff' : '#888',
             transition: 'color 0.2s ease'
           }} 
