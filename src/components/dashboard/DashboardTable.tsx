@@ -56,8 +56,7 @@ export default function DashboardTable() {
       key: 'estado',
       render: (estado: 'Activo' | 'Inactivo') => (
         <Tag
-          color={estado === 'Activo' ? 'green' : 'red'}
-          style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+          style={{ display: 'flex', alignItems: 'center', gap: 6, border: "none", background: "transparent" }}
         >
           <span
             style={{
