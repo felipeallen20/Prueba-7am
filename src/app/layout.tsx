@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout style={{ minHeight: '100vh' }}>
+        <Layout style={{ minHeight: '100vh', maxHeight: '100vh', overflow: "hidden" }}>
           <Sider
             width={72}
             style={{
