@@ -1,8 +1,8 @@
 'use client';
 
-import { Table, Tag, Dropdown, Button, Space, MenuProps } from 'antd';
-import { DownOutlined, EditOutlined, DeleteOutlined, StopOutlined } from '@ant-design/icons';
-import { MoreOutlined } from '@ant-design/icons';
+import { Table, Tag, Dropdown, Button } from 'antd';
+import { EditOutlined, DeleteOutlined, StopOutlined, MoreOutlined } from '@ant-design/icons';
+import { MenuProps } from 'antd';
 
 interface Empresa {
   id: string;
@@ -10,15 +10,11 @@ interface Empresa {
   estado: 'Activo' | 'Inactivo';
 }
 
-const data: Empresa[] = [
-  { id: '01', nombre: 'Empresa nombre ABC', estado: 'Activo' },
-  { id: '02', nombre: 'Empresa nombre ABC', estado: 'Activo' },
-  { id: '03', nombre: 'Empresa nombre ABC', estado: 'Activo' },
-  { id: '04', nombre: 'Empresa nombre ABC', estado: 'Activo' },
-  { id: '05', nombre: 'Empresa nombre ABC', estado: 'Inactivo' },
-];
+interface Props {
+  empresas: Empresa[];
+}
 
-export default function DashboardTable() {
+export default function DashboardTable({ empresas }: Props) {
   const items: MenuProps['items'] = [
     {
       key: 'edit',
@@ -87,7 +83,7 @@ export default function DashboardTable() {
   return (
     <Table
       columns={columns}
-      dataSource={data}
+      dataSource={empresas}
       pagination={false}
       rowKey="id"
     />
