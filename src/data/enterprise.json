@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01",
+    "nombre": "Empresa nombre ABC",
+    "estado": "Activo"
+  },
+  {
+    "id": "02",
+    "nombre": "Empresa nombre ABC",
+    "estado": "Activo"
+  },
+  {
+    "id": "03",
+    "nombre": "Empresa nombre ABC",
+    "estado": "Activo"
+  },
+  {
+    "id": "04",
+    "nombre": "Empresa nombre ABC",
+    "estado": "Activo"
+  },
+  {
+    "id": "05",
+    "nombre": "Empresa nombre ABC",
+    "estado": "Inactivo"
+  }
+]
