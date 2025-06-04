@@ -1,6 +1,7 @@
 "use client";
 
 import { Breadcrumb, Typography, Table, Layout } from 'antd';
+import FilterTable from '@/components/dashboard/FilterTable';
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -27,6 +28,12 @@ export default function Dashboard() {
         <Title level={2} style={{ marginBottom: 24 }}>
           Lista de empresas
         </Title>
+
+        <FilterTable
+          totalEmpresas={empresas.length}
+          onSearch={(value) => console.log('Buscar:', value)}
+          onCreate={() => console.log('Crear nueva empresa')}
+        />
       </Content>
     </Layout>
   );
