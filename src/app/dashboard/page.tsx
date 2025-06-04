@@ -17,11 +17,25 @@ interface Empresa {
 export default function Dashboard() {
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
+  const fetchEmpresas = async (search: string = '') => {
+    const endpoint = search
+      ? `/api/enterprise/search?nombre=${encodeURIComponent(search)}`
+      : `/api/enterprise`;
+
+    const res = await fetch(endpoint);
+    const data = await res.json();
+    setEmpresas(data);
+  };
+
   useEffect(() => {
     fetch('/api/enterprise')
       .then((res) => res.json())
       .then((data) => setEmpresas(data))
       .catch((err) => console.error('Error al cargar empresas:', err));
+  }, []);
+
+   useEffect(() => {
+    fetchEmpresas();
   }, []);
 
   return (
@@ -38,7 +52,7 @@ export default function Dashboard() {
 
         <FilterTable
           totalEmpresas={empresas.length}
-          onSearch={(value) => console.log('Buscar:', value)}
+          onSearch={(value) => fetchEmpresas(value)}
           onCreate={() => console.log('Crear nueva empresa')}
         />
 
