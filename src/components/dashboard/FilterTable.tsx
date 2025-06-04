@@ -1,7 +1,7 @@
 'use client';
 
 import { Input, Button, Typography, Space } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 
 const { Text } = Typography;
 
@@ -14,11 +14,16 @@ interface FilterTableProps {
 export default function FilterTable({ totalEmpresas, onSearch, onCreate }: FilterTableProps) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-      <Input.Search
+      <Input
         placeholder="Buscar por nombre"
         allowClear
-        onSearch={onSearch}
+        onPressEnter={(e) => {
+          const inputValue = (e.target as HTMLInputElement).value;
+          onSearch(inputValue);
+        }} 
         style={{ maxWidth: 250 }}
+        prefix={<SearchOutlined />}
+        className="custom-search"
       />
 
       <Space size="middle">
