@@ -2,6 +2,7 @@
 
 import { Breadcrumb, Typography, Table, Layout } from 'antd';
 import FilterTable from '@/components/dashboard/FilterTable';
+import DashboardTable from '@/components/dashboard/DashboardTable';
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -34,6 +35,8 @@ export default function Dashboard() {
           onSearch={(value) => console.log('Buscar:', value)}
           onCreate={() => console.log('Crear nueva empresa')}
         />
+
+        <DashboardTable />
       </Content>
     </Layout>
   );
