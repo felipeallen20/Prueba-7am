@@ -45,48 +45,51 @@ export default function CreateEnterpriseModal({ open, onClose }: Props) {
       confirmLoading={loading}
       okText="Crear empresa"
       cancelText="Cancelar"
+      width={700}
     >
-      <Form form={form} layout="vertical">
-        <Form.Item
-          name="nombre"
-          label="Nombre"
-          rules={[{ required: true, message: 'Por favor ingresa el nombre' }]}
-        >
-          <Input placeholder="Escribir nombre" />
-        </Form.Item>
+      <div style={{ paddingLeft: 72, paddingRight: 72, paddingTop: 20, paddingBottom: 20 }}>
+        <Form form={form} layout="vertical">
+          <Form.Item
+            name="nombre"
+            label="Nombre"
+            rules={[{ required: true, message: 'Por favor ingresa el nombre' }]}
+          >
+            <Input placeholder="Escribir nombre" />
+          </Form.Item>
 
-        <Form.Item
-          name="logo"
-          label="Adjuntar logo completo"
-          valuePropName="fileList"
-          getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
-          rules={[{ required: true, message: 'Por favor sube un logo' }]}
-        >
-          <Dragger {...uploadProps}>
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p>Haz clic o arrastra para subir tu archivo</p>
-            <p className="ant-upload-hint">JPG, PNG</p>
-          </Dragger>
-        </Form.Item>
+          <Form.Item
+            name="logo"
+            label="Adjuntar logo completo"
+            valuePropName="fileList"
+            getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
+            rules={[{ required: true, message: 'Por favor sube un logo' }]}
+          >
+            <Dragger {...uploadProps}>
+              <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+              </p>
+              <p>Haz clic o arrastra para subir tu archivo</p>
+              <p className="ant-upload-hint">JPG, PNG</p>
+            </Dragger>
+          </Form.Item>
 
-        <Form.Item
-          name="isotipo"
-          label="Adjuntar isotipo"
-          valuePropName="fileList"
-          getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
-          rules={[{ required: true, message: 'Por favor sube un isotipo' }]}
-        >
-          <Dragger {...uploadProps}>
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p>Haz clic o arrastra para subir tu archivo</p>
-            <p className="ant-upload-hint">JPG, PNG</p>
-          </Dragger>
-        </Form.Item>
-      </Form>
+          <Form.Item
+            name="isotipo"
+            label="Adjuntar isotipo"
+            valuePropName="fileList"
+            getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
+            rules={[{ required: true, message: 'Por favor sube un isotipo' }]}
+          >
+            <Dragger {...uploadProps}>
+              <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+              </p>
+              <p>Haz clic o arrastra para subir tu archivo</p>
+              <p className="ant-upload-hint">JPG, PNG</p>
+            </Dragger>
+          </Form.Item>
+        </Form>
+      </div>
     </Modal>
   );
 }
