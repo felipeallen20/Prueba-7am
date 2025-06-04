@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { Input, Button, Typography, Space } from 'antd';
 import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
+import CreateEnterpriseModal from './CreateEnterpriseModal';
 
 const { Text } = Typography;
 
@@ -12,6 +14,8 @@ interface FilterTableProps {
 }
 
 export default function FilterTable({ totalEmpresas, onSearch, onCreate }: FilterTableProps) {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
       <Input
@@ -28,11 +32,17 @@ export default function FilterTable({ totalEmpresas, onSearch, onCreate }: Filte
 
       <Space size="middle">
         <Text type="secondary">{String(totalEmpresas).padStart(2, '0')} empresas</Text>
-        <Button type="primary" onClick={onCreate} style={{ backgroundColor: '#1E1F8A' }}>
+        <Button
+          type="primary" onClick={() => setOpenModal(true)} style={{ backgroundColor: '#1E1F8A' }}>
           Crear nueva empresa
           <PlusOutlined />
         </Button>
       </Space>
+
+      <CreateEnterpriseModal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+      />
     </div>
   );
 }
